@@ -21,4 +21,5 @@ COPY pkg/drone-commands-0.0.0.gem /tmp/
 RUN gem install --no-ri --no-rdoc --local \
   /tmp/drone-commands-0.0.0.gem
 
-ENTRYPOINT ["/usr/bin/drone-commands"]
+# ENTRYPOINT ["/usr/bin/drone-commands"]
+ENTRYPOINT ["/usr/local/bundle/bin/drone-commands"]
