@@ -8,18 +8,18 @@ end
 
 begin
   require "drone"
-  require "drone/supermarket"
+  require "drone/commands"
 rescue LoadError
   require "rubygems"
   require "drone"
-  require "drone/supermarket"
+  require "drone/commands"
 end
 
 ARGV.delete "--"
 
 begin
   Drone::Plugin.new(ARGV.first) do |payload|
-    Drone::Supermarket.new(
+    Drone::Commands.new(
       payload
     ).execute!
   end
