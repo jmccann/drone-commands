@@ -27,7 +27,6 @@ module Drone
       # Write config files to filesystem
       #
       def configure!
-        write_keyfile
         write_netrc
       end
 
