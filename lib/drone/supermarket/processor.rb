@@ -36,8 +36,10 @@ module Drone
       protected
 
       def run_commands
-        config.commands.each do |cmd|
-          execute cmd
+        Dir.chdir(config.workspace.path) do
+          config.commands.each do |cmd|
+            execute cmd
+          end
         end
       end
 
